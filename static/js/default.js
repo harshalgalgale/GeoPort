@@ -101,6 +101,10 @@ function showPlaceAddForm(marker_lat, marker_lng) {
 }
 
 function closePlaceAddForm() {
+    $( '#id-create-form' ).each(function(){
+        this.reset();
+    });
+
     $('#id-add-marker').text('Dodaj nowe miejsce');
     MAP.removeLayer(MARKER);
     MARKER = null;
@@ -187,11 +191,8 @@ function initPortalMap(map_center_lng, map_center_lat, map_zoom) {
             //contentType: 'application/json',
             success: function (data) {
                 if (data.success){
-                    $( '#id-create-form' ).each(function(){
-                        this.reset();
-                    });
                     closePlaceAddForm();
-                    showInformationAlert('Place has been registered.');
+                    showInformationAlert('Place has been registered (' + data.place_pk.toString() + '). Confirmation email will be send.' );
                 } else {
                     showFormErrors(data.errors);
                 }

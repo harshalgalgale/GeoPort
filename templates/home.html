@@ -27,9 +27,6 @@
         <button id="id-form-submit" type="submit" class="btn btn-primary">
             Dodaj miejsce
         </button>
-        <button id="id-form-cancel" class="btn btn-primary">
-            Anuluj
-        </button>
         {% end_bootstrap_form_buttons %}
 
     </form>
@@ -42,7 +39,6 @@
     <script>
         $(document).ready(function () {
             initPortalMap({{ MAP_CENTER_LNG }}, {{ MAP_CENTER_LAT }}, {{ MAP_ZOOM }});
-
         });
     </script>
 

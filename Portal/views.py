@@ -39,9 +39,9 @@ def place_create_view(request):
     if request.method == 'POST' and request.is_ajax():
         form = PlaceCreateForm(request.POST)
         if form.is_valid():
-            form.save()
+            place = form.save()
             return HttpResponse(json.dumps(
-                                {'success': True}), 'application/json')
+                                {'success': True, 'place_pk': place.pk}), 'application/json')
         else:
             errors = dict([(k, form.error_class.as_text(v)) for k, v in form.errors.items()])
 
