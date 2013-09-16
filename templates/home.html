@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div>
+        <div class="portal-map" id='portal-map'></div>
+    </div>
+
+{% endblock %}
+
+{% block messages %}
+    <div id='id-alert-placeholder' class='alert-placeholder'></div>
+    <div id='id-info-placeholder' class='info-placeholder'></div>
+
+{% endblock %}
+
+{% block sidebar %}
+<div id='id-sidebar' class='sidebar'>
+
+    <form class="form" id="id-create-form" action="{% url "place_create_view" %}"
+          method="post">
+        {% csrf_token %}
+
+        {% bootstrap_form PLACE_CREATE_FORM %}
+
+        {% bootstrap_form_buttons %}
+        <button id="id-form-submit" type="submit" class="btn btn-primary">
+            Dodaj miejsce
+        </button>
+        <button id="id-form-cancel" class="btn btn-primary">
+            Anuluj
+        </button>
+        {% end_bootstrap_form_buttons %}
+
+    </form>
+</div>
+
+{% endblock %}
+
+{% block extra_js_content %}
+
+    <script>
+        $(document).ready(function () {
+            initPortalMap({{ MAP_CENTER_LNG }}, {{ MAP_CENTER_LAT }}, {{ MAP_ZOOM }});
+
+        });
+    </script>
+
+{% endblock %}

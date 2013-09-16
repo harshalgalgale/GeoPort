@@ -1,0 +1,69 @@
+.body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.portal-map {
+    position: absolute;
+    top: 60px; /* navbar 60px block at the top */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.portal-create-map {
+    position: absolute;
+    top: 60px; /* navbar 60px block at the top */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+}
+
+.sidebar {
+    border-left: 1px solid #BBBBBB;
+    border-top: 1px solid #BBBBBB;
+    bottom: 0;
+    display: none;
+    overflow-x: auto;
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    right: 0;
+    top: 60px; /* navbar 60px block at the top */
+    width: 30%;
+    z-index: 10;
+    background-color: #FFFFFF;
+    /*opacity: 0.8;*/
+}
+
+.alert-placeholder {
+    display: block;
+    overflow-x: auto;
+    position: absolute;
+    right: 30%;
+    top: 60px; /* navbar 60px block at the top */
+    z-index: 10;
+    margin: 10px;
+}
+
+.info-placeholder {
+    display: block;
+    overflow-x: auto;
+    position: absolute;
+    width: 30%;
+    top: 60px; /* navbar 60px block at the top */
+    z-index: 10;
+    margin: 10px;
+}
+
+.header-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wrap-padding {
+    padding: 15px;
+}
